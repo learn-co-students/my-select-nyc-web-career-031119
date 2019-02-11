@@ -1,5 +1,8 @@
-def my_select(collection)
 
-return collection.select{ |i| i%2==0 }
+def my_select(array, arr2=[])
 
+array.select do |i|
+  yield(i) == true ? arr2<< i : false
+end
+  arr2
 end
